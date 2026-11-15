@@ -115,4 +115,6 @@ print("___________________________________________")
 rede.CompartilharRelatos("Maria", "Teste de relato.", "16:53", "03/01/2026")
 
 print("Quantidade de relatos compartilhados: ", len(rede.relatos))
+print("Texto do relato: ", rede.relatos[0].textos)
 print("___________________________________________")
+
