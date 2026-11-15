@@ -21,6 +21,8 @@ print(usuario.FazerLogin("senha456"))
 
 print("___________________________________________")
 
+questionario = Questionario("Exemplo de pergunta", "Exemplo de resposta")
+
 print("CLASSE VITIMA")
 #Criando objeto vitima
 vitima = Vitima("Fulana", "69999999999", "12345678910", "senha123", "@fulana@gmail.com", "Porto Velho")
@@ -54,7 +56,7 @@ vitima.PedirSocorro()
 vitima.VerLocalizacao()
 vitima.AcessarRedeDeApoio()
 vitima.CompartilharLocalizacao()
-vitima.ResponderQuestionario()
+vitima.ResponderQuestionario(questionario)
 vitima.CompartilharRelatos()
 print("___________________________________________")
 
@@ -118,8 +120,6 @@ print("Texto do relato: ", rede.relatos[0].textos)
 print("___________________________________________")
 
 print("CLASSE QUESTIONARIO")
-#Criando o objeto questionario
-questionario = Questionario("Exemplo de pergunta", "Exemplo de resposta")
 
 print("Perguntas: ", questionario.perguntas)
 print("Resposta: ", questionario.resposta)
@@ -127,4 +127,3 @@ print("Resposta: ", questionario.resposta)
 questionario.Retornarmanual()
 questionario.RetornarAvaliacao()
 print("___________________________________________")
-
