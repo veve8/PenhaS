@@ -74,8 +74,10 @@ class Vitima(Usuario):
         print("Localização compartilhada.")
 
 #Criando o método para a vítima responder o questionário
-    def ResponderQuestionario(self):
-        print("Questionário respondido.")
+    def ResponderQuestionario(self, questionario):
+#A vítima utiliza a classe Questionario (Dependência)
+        questionario.Retornarmanual()
+        questionario.RetornarAvaliacao()
 
 #Criando o método para a vítima compartilhar relatos na rede de apoio
     def CompartilharRelatos(self):
