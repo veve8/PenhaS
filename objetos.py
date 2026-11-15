@@ -15,12 +15,12 @@ class Usuario:
         self.cpf = cpf
         self.senha = ""
         
-#Criando a função para fazer cadastro
+#Criando o método para fazer cadastro
     def FazerCadastro(self, senha):
         self.senha = senha
         print("Cadastro realizado com sucesso.")
         
-#Criando a função de fazer login     
+#Criando o método de fazer login     
     def FazerLogin(self, senha):
         return self.senha == senha
 
@@ -52,32 +52,32 @@ class Vitima(Usuario):
         
         print("Contatos cadastrados.")
 
-#Criando a função para gravar áudios
+#Criando o método para gravar áudios
     def GravarAudio(self, audio):
         self.audios.append(audio)
         print("Áudio gravado.")
 
-#Criando a função para pedir socorro (enviar mensagem para pessoas de confiança)
+#Criando o método para pedir socorro (enviar mensagem para pessoas de confiança)
     def PedirSocorro(self):
         print("Pedido de socorro enviado.")
 
-#Criando a função para ver a localização
+#Criando o método para ver a localização
     def VerLocalizacao(self):
         print("Localização:", self.localizacao)
 
-#Criando a função para acessar a rede de apoio
+#Criando o método para acessar a rede de apoio
     def AcessarRedeDeApoio(self):
         print("Rede de apoio acessada.")
 
-#Criando a função para compartilhar a localização com pessoas de confiança
+#Criando o método para compartilhar a localização com pessoas de confiança
     def CompartilharLocalizacao(self):
         print("Localização compartilhada.")
 
-#Criando a função para a vítima responder o questionário
+#Criando o método para a vítima responder o questionário
     def ResponderQuestionario(self):
         print("Questionário respondido.")
 
-#Criando a função para a vítima compartilhar relatos na rede de apoio
+#Criando o método para a vítima compartilhar relatos na rede de apoio
     def CompartilharRelatos(self):
         print("Relato compartilhado.")
 
@@ -99,7 +99,7 @@ class BotaoDePanico:
         self.localizacao = localizacao
         self.sms = sms
 
-  #Criando a função para enviar a localização da vítima via SMS para as pessoas de confiança
+  #Criando o método para enviar a localização da vítima via SMS para as pessoas de confiança
     def EnviarSMSLocalizacao(self, contato):
         print("SMS de localização enviado:")
         print(self.sms)
@@ -114,7 +114,7 @@ class Relatos:
         self.hora = hora
         self.data = data
 
-  #Criando a função para registrar relatos
+  #Criando o método para registrar relatos
     def RegistrarRelato(self):
         print("Relato registrado.")
 
@@ -150,11 +150,11 @@ class Questionario:
         self.perguntas = perguntas
         self.resposta = resposta
 
-#Criando a função para retornar o manual de fuga
+#Criando o método para retornar o manual de fuga
     def Retornarmanual(self):
         print("Manual disponível.")
 
-#Criando a função para retornar a avaliação da situação
+#Criando o método para retornar a avaliação da situação
     def RetornarAvaliacao(self):
         print("Avaliação disponível.")
 
@@ -166,10 +166,10 @@ class AudioProva:
         self.duracao = duracao
         self.arquivo = arquivo
 
-#Criando a função para a vítima guardar o áudio gravado
+#Criando o método para a vítima guardar o áudio gravado
     def GuardaAudio(self):
         print("Áudio guardado.")
 
-#Criando a função para a vítima armazenar o áudio na nuvem
+#Criando o método para a vítima armazenar o áudio na nuvem
     def ArmazenarAudioNuvem(self):
         print("Novo áudio armazenado.")
