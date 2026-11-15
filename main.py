@@ -1,7 +1,6 @@
 from objetos import *
 
 print("CLASSE USUARIO")
-
 #Criando objeto usuario
 usuario = Usuario("Fulana", "69999999999", "12345678910")
 
@@ -116,5 +115,16 @@ rede.CompartilharRelatos("Maria", "Teste de relato.", "16:53", "03/01/2026")
 
 print("Quantidade de relatos compartilhados: ", len(rede.relatos))
 print("Texto do relato: ", rede.relatos[0].textos)
+print("___________________________________________")
+
+print("CLASSE QUESTIONARIO")
+#Criando o objeto questionario
+questionario = Questionario("Exemplo de pergunta", "Exemplo de resposta")
+
+print("Perguntas: ", questionario.perguntas)
+print("Resposta: ", questionario.resposta)
+
+questionario.Retornarmanual()
+questionario.RetornarAvaliacao()
 print("___________________________________________")
 
