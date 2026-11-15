@@ -35,3 +35,5 @@ print("Senha: ", vitima.senha)
 #Atributos próprios
 print("Email: ", vitima.email)
 print("Localização: ", vitima.localizacao)
+
+#Funções herdadas
