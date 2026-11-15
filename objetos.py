@@ -44,16 +44,16 @@ class Vitima(Usuario):
 #A vítima grava audios provas
         self.audios = []
         
-    def CadastrarContatos(self, nomeDeUsuario, nomeDeTelefone):
+    def CadastrarContatos(self, nomeDeUsuario, numeroDeTelefone):
 #Criando objeto pessoasDeConfianca
-        contato = PessoasDeConfianca(nomeDeUsuario, nomeDeTelefone)
+        contato = PessoasDeConfianca(nomeDeUsuario, numeroDeTelefone)
         
         self.pessoasDeConfianca.append(contato)
         
         print("Contatos cadastrados.")
 
 #Criando a função para gravar áudios
-    def GravarAudio(self, audios):
+    def GravarAudio(self, audio):
         self.audios.append(audio)
         print("Áudio gravado.")
 
