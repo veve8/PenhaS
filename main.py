@@ -1,3 +1,5 @@
+
+
 from objetos import *
 
 print("CLASSE USUARIO")
@@ -139,4 +141,9 @@ print("Arquivo: ", audio.arquivo)
 
 audio.GuardarAudio()
 audio.ArmazenarAudioNuvem()
+
+#Testando dependência (vítima e AudioProva)
+vitima.GravarAudio(audio)
+
+print("Quantidade de áudios gravados: ", len(vitima.audios))
 print("___________________________________________")
