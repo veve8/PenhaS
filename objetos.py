@@ -169,7 +169,7 @@ class AudioProva:
         self.arquivo = arquivo
 
 #Criando o método para a vítima guardar o áudio gravado
-    def GuardaAudio(self):
+    def GuardarAudio(self):
         print("Áudio guardado.")
 
 #Criando o método para a vítima armazenar o áudio na nuvem
