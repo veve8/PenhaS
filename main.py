@@ -127,3 +127,16 @@ print("Resposta: ", questionario.resposta)
 questionario.Retornarmanual()
 questionario.RetornarAvaliacao()
 print("___________________________________________")
+
+print("CLASSE AUDIOPROVA")
+#Criando o objeto audio
+audio = AudioProva("04/01/2026", "18:18", "00:45", "audio.mp3")
+
+print("Data: ", audio.data)
+print("Horário: ", audio.hora)
+print("Duração: ", audio.duracao)
+print("Arquivo: ", audio.arquivo)
+
+audio.GuardarAudio()
+audio.ArmazenarAudioNuvem()
+print("___________________________________________")
