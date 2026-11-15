@@ -1,4 +1,11 @@
-
+#Nome do programa: main.py
+#Curso: informática
+#Ano: 2° ano
+#Turma: 2° B
+#Disciplina: Programação Orientada a Objetos
+#Integrantes: Áirica Soares Queroz, Arielle Kayla Xavier Almeida e Verônica Oliveira Sarmento
+#Data: 15/11/2026
+#Versão: 6.0
 
 from objetos import *
 
