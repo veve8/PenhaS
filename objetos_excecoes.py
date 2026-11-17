@@ -4,8 +4,8 @@
 #Turma: 2° B
 #Disciplina: Programação Orientada a Objetos
 #Integrantes: Áirica Soares Queroz, Arielle Kayla Xavier Almeida e Verônica Oliveira Sarmento
-#Data: 16/11/2026
-#Versão: 1.0
+#Data: 17/11/2026
+#Versão: 2.0
 
 #Classe Usuario com tratamento de exceção
 class Usuario:
@@ -221,3 +221,17 @@ class Questionario:
         except ValueError as erro:
             print("Erro no questionário:", erro)
             raise
+
+#Nessa classe não foram indentificados casos de exceção
+class AudioProva:
+    def __init__(self, data, hora, duracao, arquivo):
+        self.data = data
+        self.hora = hora
+        self.duracao = duracao
+        self.arquivo = arquivo
+
+    def GuardaAudio(self):
+        print("Áudio guardado.")
+
+    def ArmazenarAudioNuvem(self):
+        print("Novo áudio armazenado.")
