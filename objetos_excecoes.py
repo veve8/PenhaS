@@ -74,3 +74,29 @@ class Questionario:
         except ValueError as erro:
             print("Erro no questionário:", erro)
             raise
+
+#Classe Questionario com tratamento de exceção
+class Questionario:
+    def __init__(self, perguntas, resposta):
+        self.perguntas = perguntas
+        self.resposta = resposta
+
+    def Retornarmanual(self):
+        print("Manual disponível.")
+
+    def RetornarAvaliacao(self):
+        print("Avaliação disponível.")
+
+    def ValidarResposta(self):
+        try:
+            if not self.perguntas.strip():
+                raise ValueError("A pergunta não pode estar vazia.")
+
+            if not self.resposta.strip():
+                raise ValueError("A resposta não pode estar vazia.")
+
+            print("Questionário respondido com sucesso.")
+
+        except ValueError as erro:
+            print("Erro no questionário:", erro)
+            raise
