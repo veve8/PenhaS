@@ -237,8 +237,8 @@ class Relatos:
 class RelatoVazioError(Exception):
         pass
 
-class RedeDeApoio
-        def __init__(self, nomeDeUsuario, textos, data, arquivo):
+class RedeDeApoio:
+    def __init__(self, nomeDeUsuario, textos, data, arquivo):
         self.nomeDeUsuario = nomeDeUsuario
         self.textos = textos
         self.data = data
@@ -250,18 +250,16 @@ class RedeDeApoio
         print("Serviços de proteção acessados.")
         
     def CompartilharRelatos(self, nomeDeUsuario, textos, hora, data):
-           try:
-                 if not textos or len(textos.strip()) == 0:
-                       raise RelatoVazioError("O relato está vazio.")
+        try:
+            if not textos or len(textos.strip()) == 0:
+                raise RelatoVazioError("O relato está vazio.")
             
-        relato = Relatos(nomeDeUsuario, textos, hora, data)
-        
-        self.relatos.append(relato)
-        
-        print("Relato compartilhado na rede de apoio.")
-except RelatoVazioError as erro:
-         print("Erro ao compartilhar relatos na rede de apoio:", erro)
-         raise
+            relato = Relatos(nomeDeUsuario, textos, hora, data)
+            self.relatos.append(relato)
+            print("Relato compartilhado na rede de apoio.")
+        except RelatoVazioError as erro:
+            print("Erro ao compartilhar relatos na rede de apoio:", erro)
+            raise
 
 #Classe Questionario com tratamento de exceção
 class Questionario:
