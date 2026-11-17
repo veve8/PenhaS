@@ -196,6 +196,64 @@ class BotaoDePanico:
             print("Erro:", erro)
             raise
 
+#Classe Relatos com tratamento de exceção 
+class Relatos:
+    def __init__(self, nomeDeUsuario, textos, hora, data):
+           try:
+                if not textos or len(textos.strip()) == 0:
+                     raise RelatoVazioError("O relato não pode estar vazio.")
+        self.nomeDeUsuario = nomeDeUsuario
+        self.textos = textos
+        self.hora = hora
+        self.data = data
+
+         except RelatoVazioError as error:
+                  print("Erro ao criar relato:", erro)
+                  raise
+
+    def RegistrarRelato(self):
+            try:
+                 if not self.textos or len(self.textos.strip()) == 0:
+                       raise RelatoVazioError("Não é possível registrar um relato vazio.")
+                 print("Relato registrado.")
+
+        except RelatoVazioError as error:
+                 print("Erro ao registrar relato:", erro)
+                 raise
+
+    def ReceberComentarios(self):
+        print("Comentários recebidos.")
+
+#Classe Rede de Apoio com tratamento de exceção 
+class RelatoVazioError(Exception):
+        pass
+
+class RedeDeApoio
+        def __init__(self, nomeDeUsuario, textos, data, arquivo):
+        self.nomeDeUsuario = nomeDeUsuario
+        self.textos = textos
+        self.data = data
+        self.arquivo = arquivo
+        
+        self.relatos = []
+        
+    def AcessarServicosProtecao(self):
+        print("Serviços de proteção acessados.")
+        
+    def CompartilharRelatos(self, nomeDeUsuario, textos, hora, data):
+           try:
+                 if not textos or len(textos.strip()) == 0:
+                       raise RelatoVazioError("O relato está vazio.")
+            
+        relato = Relatos(nomeDeUsuario, textos, hora, data)
+        
+        self.relatos.append(relato)
+        
+        print("Relato compartilhado na rede de apoio.")
+except RelatoVazioError as erro:
+         print("Erro ao compartilhar relatos na rede de apoio:", erro)
+         raise
+
 #Classe Questionario com tratamento de exceção
 class Questionario:
     def __init__(self, perguntas, resposta):
@@ -233,6 +291,5 @@ class AudioProva:
     def GuardaAudio(self):
         print("Áudio guardado.")
         
-
     def ArmazenarAudioNuvem(self):
         print("Novo áudio armazenado.")
