@@ -138,3 +138,21 @@ questionario.Retornarmanual()
 questionario.RetornarAvaliacao()
 print("___________________________________________")
 
+#A classe AudioProva não recebeu tratamento de exceção pois não foi necessário
+print("CLASSE AUDIOPROVA")
+#Criando o objeto audio
+audio = AudioProva("04/01/2026", "18:18", "00:45", "audio.mp3")
+
+print("Data: ", audio.data)
+print("Horário: ", audio.hora)
+print("Duração: ", audio.duracao)
+print("Arquivo: ", audio.arquivo)
+
+audio.GuardarAudio()
+audio.ArmazenarAudioNuvem()
+
+#Testando dependência (vítima e AudioProva)
+vitima.GravarAudio(audio)
+
+print("Quantidade de áudios gravados: ", len(vitima.audios))
+print("___________________________________________")
