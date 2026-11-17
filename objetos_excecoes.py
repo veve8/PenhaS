@@ -49,7 +49,10 @@ class Usuario:
 
     def FazerLogin(self, senha):
         return self.senha == senha
-# Classe Questionario com tratamento de exceção
+
+#Classe Vitima com tratamento de exceção
+#A classe vitima herda da classe Usuario
+#Classe Questionario com tratamento de exceção
 class Questionario:
     def __init__(self, perguntas, resposta):
         self.perguntas = perguntas
