@@ -92,7 +92,7 @@ print("___________________________________________")
 #Definindo objeto antes para poder utiliza-la para representar caso de dependência em Vitima
 questionario = Questionario("Exemplo de pergunta", "Exemplo de resposta")
 
-print("CLASSE VITIMA")
+'''print("CLASSE VITIMA")
 #Senha vazia
 try:
   senha = Vitima("")
@@ -104,7 +104,10 @@ except SenhaInvalidaError as erro:
 #Senha errada
 try:
   senha = Vitima("senha124")
-
+  senha.FazerLogin()
+  print("Senha: ", senha.senha_tentada)
+except SenhaInvalidaError as erro:
+  print(erro)'''
 print("CLASSE QUESTIONARIO")
 #Pergunta vazia
 try:
