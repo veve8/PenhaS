@@ -49,7 +49,16 @@ class Usuario:
 
     def FazerLogin(self, senha):
         return self.senha == senha
-
+        
+#Definindo erro SenhaInvalidaError
+class SenhaInvalidaError(Exception):
+    pass
+#Definindo erro ContatoInvalidoError
+class ContatoInvalidoError(Exception):
+    pass
+#Definindo erro RelatoVazioError
+class RelatoVazioError(Exception):
+    pass
 #Classe Vitima com tratamento de exceção
 #A classe Vitima herda da classe Usuario
 class Vitima(Usuario):
