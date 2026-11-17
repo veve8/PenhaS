@@ -134,3 +134,4 @@ print("Resposta: ", questionario.resposta)
 questionario.Retornarmanual()
 questionario.RetornarAvaliacao()
 print("___________________________________________")
+
