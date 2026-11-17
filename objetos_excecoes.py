@@ -290,6 +290,6 @@ class AudioProva:
 
     def GuardaAudio(self):
         print("Áudio guardado.")
-        
+
     def ArmazenarAudioNuvem(self):
         print("Novo áudio armazenado.")
