@@ -134,7 +134,8 @@ relato.ReceberComentarios()
 print("___________________________________________")
 
 print("CLASSE REDEDEAPOIO")
-
+try:
+  relato_rede = 
 
 print("CLASSE QUESTIONARIO")
 #Pergunta vazia
