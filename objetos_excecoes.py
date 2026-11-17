@@ -52,6 +52,39 @@ class Usuario:
 
 #Classe Vitima com tratamento de exceção
 #A classe vitima herda da classe Usuario
+class Vitima(Usuario):
+    def __init__(self, nome, telefone, cpf, senha, email, localizacao):
+        super().__init__(nome, telefone, cpf)
+        
+#A vítima já possui uma conta cadastrada, então precisa de uma senha definitiva
+        self.senha = senha
+
+        self.email = email
+        self.localizacao = localizacao
+        
+#A vítima possui pessoas de confiança
+        self.pessoasDeConfianca = []
+        
+#A vítima utiliza a classe Questionario
+        self.questionario = None
+        
+#A vítima grava audios provas
+        self.audios = []
+
+#Diferente de cadastro, login mantem uma senha definitiva, pois a conta já está criada
+#Validando a senha
+def FazerLogin(self, senha_tentada):
+    try:
+        if not senha_tentada or len(senha_tentada.strip()) == 0:
+            raise SenhaInvalidaError("Senha incorreta.")
+        print("Login realizado com sucesso.")
+        return True
+    except SenhaInvalidaError as erro:
+        print("Erro no login: ", erro)
+        return False
+
+#Impedindo o usuário de cadastrar nada
+
 #Classe Questionario com tratamento de exceção
 class Questionario:
     def __init__(self, perguntas, resposta):
