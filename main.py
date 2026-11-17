@@ -30,6 +30,7 @@ print(usuario.FazerLogin("senha456"))
 
 print("___________________________________________")
 
+#Definindo objeto antes para poder utiliza-la para representar caso de dependência em Vitima
 questionario = Questionario("Exemplo de pergunta", "Exemplo de resposta")
 
 print("CLASSE VITIMA")
