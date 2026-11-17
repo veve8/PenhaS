@@ -208,23 +208,23 @@ class BotaoDePanico:
 #Classe Relatos com tratamento de exceção 
 class Relatos:
     def __init__(self, nomeDeUsuario, textos, hora, data):
-           try:
-                if not textos or len(textos.strip()) == 0:
-                     raise RelatoVazioError("O relato não pode estar vazio.")
-        self.nomeDeUsuario = nomeDeUsuario
-        self.textos = textos
-        self.hora = hora
-        self.data = data
+        try:
+            if not textos or len(textos.strip()) == 0:
+                raise RelatoVazioError("O relato não pode estar vazio.")
+            self.nomeDeUsuario = nomeDeUsuario
+            self.textos = textos
+            self.hora = hora
+            self.data = data
 
-         except RelatoVazioError as error:
+        except RelatoVazioError as error:
                   print("Erro ao criar relato:", erro)
                   raise
 
     def RegistrarRelato(self):
-            try:
-                 if not self.textos or len(self.textos.strip()) == 0:
-                       raise RelatoVazioError("Não é possível registrar um relato vazio.")
-                 print("Relato registrado.")
+        try:
+            if not self.textos or len(self.textos.strip()) == 0:
+                raise RelatoVazioError("Não é possível registrar um relato vazio.")
+            print("Relato registrado.")
 
         except RelatoVazioError as error:
                  print("Erro ao registrar relato:", erro)
