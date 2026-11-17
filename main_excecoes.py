@@ -7,4 +7,5 @@
 #Data: 16/11/2026
 #Versão: 1.0
 
-#Testando os casos de exceção
+#Testando as classes sem os erros que causam os casos de exceção
+
