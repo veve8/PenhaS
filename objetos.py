@@ -26,8 +26,8 @@ class Usuario:
 
 #Criando a classe Vitima, que herda de Usuario (Herança)
 class Vitima(Usuario):
-    def init(self, nome, telefone, cpf, senha, email, localizacao):
-        super().init(nome, telefone, cpf)
+    def __init__(self, nome, telefone, cpf, senha, email, localizacao):
+        super().__init__(nome, telefone, cpf)
         
 #A vítima já possui uma conta cadastrada, então precisa de uma senha definitiva
         self.senha = senha
