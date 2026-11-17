@@ -247,8 +247,8 @@ questionario = Questionario("Exemplo de pergunta", "Exemplo de resposta")
 print("CLASSE QUESTIONARIO")
 #Pergunta vazia
 try:
-  perguntas = Questionario("")
-  resposta = Questionario("Exemplo de resposta.")
+  perguntas_resposta = Questionario("", "Exemplo de resposta.")
+  perguntas_resposta.ValidarResposta()
   print("Perguntas: ", questionario.perguntas)
   print("Resposta: ", questionario.resposta)
 except ValueError as erro:
@@ -256,8 +256,8 @@ except ValueError as erro:
 
 #Resposta vazia
 try:
-  pergunta = Questionario("Exemplo de pergunta.")
-  resposta = Questionario("")
+  perguntas_resposta = Questionario("Exemplo de pergunta.", "")
+  perguntas_resposta.ValidarResposta()
   print("Perguntas: ", questionario.perguntas)
   print("Resposta: ", questionario.resposta)
 except ValueError as erro:
@@ -266,8 +266,7 @@ except ValueError as erro:
 #Criando objetos com dados válidos
 print("___________________________________________")
 print("OBJETO DA CLASSE QUESTIONARIO COM DADOS VÁLIDOS")
-perguntas = Questionario("Exemplo de pergunta.")
-resposta = Questionario("Exemplo de resposta.")
+perguntas_resposta = Questionario("Exemplo de pergunta.", "Exemplo de resposta.")
 print("Perguntas: ", questionario.perguntas)
 print("Resposta: ", questionario.resposta)
 
