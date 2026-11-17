@@ -107,7 +107,7 @@ try:
   senha.FazerLogin()
   print("Senha: ", senha.senha_tentada)
 except SenhaInvalidaError as erro:
-  print(erro)'''
+  print(erro)''' 
 print("CLASSE QUESTIONARIO")
 #Pergunta vazia
 try:
