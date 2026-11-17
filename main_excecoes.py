@@ -197,23 +197,37 @@ except ValueError as erro:
 #CPF com letras
 try:
   usuario = Usuario("Fulana", "69999999999", "123456789ab")
+  print("Nome: ", usuario.nome)
+  print("Telefone: ", usuario.telefone)
+  print("CPF: ", usuario.cpf)
 except ValueError as erro:
   print(erro)
 
 #CPF com menos de 11 dígitos
 try:
   usuario = Usuario("Fulana", "69999999999", "123456789")
+  print("Nome: ", usuario.nome)
+  print("Telefone: ", usuario.telefone)
+  print("CPF: ", usuario.cpf)
 except ValueError as erro:
   print(erro)
 
 #CPF com mais de 11 dígitos
 try:
   usuario = Usuario("Fulana", "69999999999", "123456789101")
+  print("Nome: ", usuario.nome)
+  print("Telefone: ", usuario.telefone)
+  print("CPF: ", usuario.cpf)
 except ValueError as erro:
   print(erro)
 
 #Criando objeto com dados válidos
+print("___________________________________________")
+print("OBJETO DA CLASSE USUÁRIO COM DADOS VÁLIDOS")
 usuario = Usuario("Fulana", "69999999999", "12345678910")
+print("Nome: ", usuario.nome)
+print("Telefone: ", usuario.telefone)
+print("CPF: ", usuario.cpf)
 
 #Método de cadastro ("inventar" a senha)
 usuario.FazerCadastro("senha123")
@@ -229,3 +243,34 @@ print("___________________________________________")
 
 #Definindo objeto antes para poder utiliza-la para representar caso de dependência em Vitima
 questionario = Questionario("Exemplo de pergunta", "Exemplo de resposta")
+
+print("CLASSE QUESTIONARIO")
+#Pergunta vazia
+try:
+  perguntas = Questionario("")
+  resposta = Questionario("Exemplo de resposta.")
+  print("Perguntas: ", questionario.perguntas)
+  print("Resposta: ", questionario.resposta)
+except ValueError as erro:
+  print(erro)
+
+#Resposta vazia
+try:
+  pergunta = Questionario("Exemplo de pergunta.")
+  resposta = Questionario("")
+  print("Perguntas: ", questionario.perguntas)
+  print("Resposta: ", questionario.resposta)
+except ValueError as erro:
+  print(erro)
+
+#Criando objetos com dados válidos
+print("___________________________________________")
+print("OBJETO DA CLASSE QUESTIONARIO COM DADOS VÁLIDOS")
+perguntas = Questionario("Exemplo de pergunta.")
+resposta = Questionario("Exemplo de resposta.")
+print("Perguntas: ", questionario.perguntas)
+print("Resposta: ", questionario.resposta)
+
+questionario.Retornarmanual()
+questionario.RetornarAvaliacao()
+print("___________________________________________")
