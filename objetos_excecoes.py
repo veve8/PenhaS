@@ -83,7 +83,7 @@ class Vitima(Usuario):
            print("Login realizado com sucesso.")
            return True
 
-       except senhaInvalidaError as erro:
+        except SenhaInvalidaError as erro:
            print("Erro no login:", erro)
            return False
 
@@ -94,7 +94,7 @@ class Vitima(Usuario):
                 raise ContatoInvalidoError("O nome e o telefone de contato não podem estar vazios.")
             
 # Criando objeto PessoasDeConfianca
-    contato = PessoasDeConfianca(nomeDeUsuario, numeroDeTelefone)
+            contato = PessoasDeConfianca(nomeDeUsuario, numeroDeTelefone)
             
             self.pessoasDeConfianca.append(contato)
             print("Contatos cadastrados.")
@@ -109,13 +109,13 @@ class Vitima(Usuario):
 
 #Não há como enviar pedido de socorro se não houver alguém para recebê-la
     def PedirSocorro(self):
-       try:
-           if len(self.pessoasDeConfiança) == 0:
-            raise IndexError("Nenhuma pessoa de confiança cadastrada.")
-         print("Pedido de socorro enviado.")
-            except IndexError as erro:
-         print ("Erro de envio:", erro)
-             raise
+        try:
+            if len(self.pessoasDeConfiança) == 0:
+                raise IndexError("Nenhuma pessoa de confiança cadastrada.")
+            print("Pedido de socorro enviado.")
+        except IndexError as erro:
+            print ("Erro de envio:", erro)
+            raise
 
     def VerLocalizacao(self):
         print("Localização:", self.localizacao)
@@ -131,12 +131,12 @@ class Vitima(Usuario):
 
 #Não é possível compartilhar relato sem conteúdo algum
     def CompartilharRelatos(self, textoRelato):
-       try:
-           if not textoRelato or len (textoRelato.strip()) == 0:
-            raise RelatoVazioError("O relato está vazio.")
-        print("Relato compartilhado.")
-              excepto RelatoVazioError as erro:
-        print("Erro no envio:", erro)
+        try:
+            if not textoRelato or len (textoRelato.strip()) == 0:
+                raise RelatoVazioError("O relato está vazio.")
+            print("Relato compartilhado.")
+        except RelatoVazioError as erro:
+            print("Erro no envio:", erro)
             raise
 
 #Classe PessoasDeConfiança com tratamento de exceção
