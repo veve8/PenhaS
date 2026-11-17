@@ -288,7 +288,7 @@ class AudioProva:
         self.duracao = duracao
         self.arquivo = arquivo
 
-    def GuardaAudio(self):
+    def GuardarAudio(self):
         print("Áudio guardado.")
 
     def ArmazenarAudioNuvem(self):
