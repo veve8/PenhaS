@@ -108,6 +108,34 @@ try:
   print("Senha: ", senha.senha_tentada)
 except SenhaInvalidaError as erro:
   print(erro)''' 
+
+print("CLASSE RELATOS")
+#Erro do relato vazio 
+try:
+    relato = Relatos("Ana", "", "15:56", "04/01/2026")
+    print("Nome de usuário: ", relato.nomeDeUsuario)
+    print("Relato: ", relato.textos)
+    print("Horário: ", relato.hora)
+    print("Data: ", relato.data)
+except RelatoVazioError as erro:
+    print(erro)
+#Criando objeto com dados válidos
+print("___________________________________________")
+print("OBJETO DA CLASSE RELATOS COM DADOS VÁLIDOS")
+relato = Relatos("Ana", "Exemplo de texto.", "16:12", "04/01/2026")
+print("Nome de usuário: ", relato.nomeDeUsuario)
+print("Relato: ", relato.textos)
+print("Horário: ", relato.hora)
+print("Data: ", relato.data)
+
+relato.RegistrarRelato()
+relato.ReceberComentarios()
+
+print("___________________________________________")
+
+print("CLASSE REDEDEAPOIO")
+
+
 print("CLASSE QUESTIONARIO")
 #Pergunta vazia
 try:
