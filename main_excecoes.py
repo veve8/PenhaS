@@ -4,8 +4,8 @@
 #Turma: 2° B
 #Disciplina: Programação Orientada a Objetos
 #Integrantes: Áirica Soares Queroz, Arielle Kayla Xavier Almeida e Verônica Oliveira Sarmento
-#Data: 16/11/2026
-#Versão: 1.0
+#Data: 17/11/2026
+#Versão: 2.0
 
 from objetos_excecoes import *
 
