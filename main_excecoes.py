@@ -109,6 +109,23 @@ try:
 except SenhaInvalidaError as erro:
   print(erro)''' 
 
+print("CLASSE PESSOASDECONFIANCA")
+if _name_ == "_main_":
+    try:
+        nome = input("Digite o nome: ")
+        telefone = input("Digite o telefone: ")
+
+        pessoa = PessoasDeConfianca(nome, telefone)
+
+        print("\nCadastro realizado com sucesso!")
+        print("Nome:", pessoa.nomeDeUsuario)
+        print("Telefone:", pessoa.numeroDeTelefone)
+
+        pessoa.ReceberSMSlocalizacao()
+
+    except ValueError as erro:
+        print("Erro:", erro)
+
 print("CLASSE RELATOS")
 #Erro do relato vazio 
 try:
