@@ -4,8 +4,8 @@
 #Turma: 2° B
 #Disciplina: Programação Orientada a Objetos
 #Integrantes: Áirica Soares Queroz, Arielle Kayla Xavier Almeida e Verônica Oliveira Sarmento
-#Data: 15/11/2026
-#Versão: 6.0
+#Data: 17/11/2026
+#Versão: 7.0
         
 #Criando a classe Usuario
 class Usuario:
@@ -169,9 +169,9 @@ class AudioProva:
         self.arquivo = arquivo
 
 #Criando o método para a vítima guardar o áudio gravado
-    def GuardarAudio(self, audio):
+    def GuardarAudio(self):
 #A vítima utiliza a classe AudioProva (Dependência)
-        audio.GuardarAudio()
+        print("Áudio gravado.")
 
 #Criando o método para a vítima armazenar o áudio na nuvem
     def ArmazenarAudioNuvem(self):
