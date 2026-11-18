@@ -121,7 +121,6 @@ except RelatoVazioError as erro:
     print(erro)
 #Criando objeto com dados válidos
 print("___________________________________________")
-print("OBJETO DA CLASSE RELATOS COM DADOS VÁLIDOS")
 relato = Relatos("Ana", "Exemplo de texto.", "16:12", "04/01/2026")
 print("Nome de usuário: ", relato.nomeDeUsuario)
 print("Relato: ", relato.textos)
@@ -134,8 +133,34 @@ relato.ReceberComentarios()
 print("___________________________________________")
 
 print("CLASSE REDEDEAPOIO")
+#Relato vazio
 try:
-  relato_rede = 
+    rede = RedeDeApoio("Maria", "", "15/11/2026", "documento.pdf")
+    print("Nome de usuário: ", rede.nomeDeUsuario)
+    print("Textos: ", rede.textos)
+    print("Data: ", rede.data)
+    print("Arquivo: ", rede.arquivo)
+    rede.CompartilharRelatos("Maria", "", "19:37", "15/11/2026")
+except RelatoVazioError as erro:
+    print(erro)
+  
+#Criando objetos com dados válidos
+print("___________________________________________")
+print("OBJETO DA CLASSE REDEDEAPOIO COM DADOS VÁLIDOS")
+rede = RedeDeApoio("Maria", "Exemplo de texto.", "15/11/2026", "documento.pdf")
+print("Nome de usuário: ", rede.nomeDeUsuario)
+print("Textos: ", rede.textos)
+print("Data: ", rede.data)
+print("Arquivo: ", rede.arquivo)
+rede.CompartilharRelatos("Maria", "Exemplo de texto.", "19:37", "15/11/2026")
+#Testando os métodos
+rede.AcessarServicosProtecao()
+
+rede.CompartilharRelatos("Maria","Exemplo de texto.","19:31","15/11/2026")
+
+#Testando a relação de composição entre a rede de apoio e relatos
+print("Quantidade de relatos compartilhados: ", len(rede.relatos))
+print("Texto do relato: ", rede.relatos[0].textos)
 
 print("CLASSE QUESTIONARIO")
 #Pergunta vazia
