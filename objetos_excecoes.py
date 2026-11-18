@@ -7,6 +7,19 @@
 #Data: 17/11/2026
 #Versão: 2.0
 
+#Casos de exceções personalizadas
+class SenhaInvalidaError(Exception):
+    pass
+
+class ContatoInvalidoError(Exception):
+    pass
+
+class TelefoneInvalidoError(Exception):
+    pass
+
+class RelatoVazioError(Exception):
+    pass
+
 #Classe Usuario com tratamento de exceção
 class Usuario:
     def __init__(self, nome, telefone, cpf):
@@ -49,16 +62,7 @@ class Usuario:
 
     def FazerLogin(self, senha):
         return self.senha == senha
-        
-#Definindo erro SenhaInvalidaError
-class SenhaInvalidaError(Exception):
-    pass
-#Definindo erro ContatoInvalidoError
-class ContatoInvalidoError(Exception):
-    pass
-#Definindo erro RelatoVazioError
-class RelatoVazioError(Exception):
-    pass
+
 #Classe Vitima com tratamento de exceção
 #A classe Vitima herda da classe Usuario
 class Vitima(Usuario):
@@ -71,9 +75,6 @@ class Vitima(Usuario):
         
 #A vítima possui pessoas de confiança
         self.pessoasDeConfianca = []
-        
-#A vítima utiliza a classe Questionario
-        self.questionario = None
         
 #A vítima tem acesso aos audios provas
         self.audios = []
@@ -98,11 +99,27 @@ class Vitima(Usuario):
 
 #Erro ao cadastrar ninguém
     def CadastrarContatos(self, nomeDeUsuario, numeroDeTelefone):
+        contato = PessoasDeConfianca(nomeDeUsuario, numeroDeTelefone)
+        self.pessoasDeConfianca.append(contato)
+        print("Contatos cadastrados.")
+
+#A vítima utiliza a classe AudioProva
+    def GravarAudio(self, audios):
+        self.audios.append(audio)
+        audio.GuardarAudio()
+        print("Áudio gravado.")
+
+#Não há como enviar pedido de socorro se não houver alguém para recebê-la
+    def PedirSocorro(self):
         try:
-            if not nomeDeUsuario or len(nomeDeUsuario.strip()) == 0 or not nomeDeTelefone or len(numeroDeTelefone.strip()) == 0:
-                raise ContatoInvalidoError("O nome e o telefone de contato não podem estar vazios.")
+            if len(self.pessoasDeConfiança) == 0:
+                raise IndexError("Nenhuma pessoa de confiança cadastrada.")
+            print("Pedido de socorro enviado.")
+        except IndexError as erro:
+            print ("Erro de envio:", erro)
+            raise
             
-# Criando objeto PessoasDeConfianca
+#Criando objeto PessoasDeConfianca
             contato = PessoasDeConfianca(nomeDeUsuario, numeroDeTelefone)
             
             self.pessoasDeConfianca.append(contato)
@@ -111,10 +128,6 @@ class Vitima(Usuario):
         except ContatoInvalidoError as erro:
             print("Erro no cadastro de contato:", erro)
             raise
-        
-    def GravarAudio(self, audios):
-        self.audios.append(audio)
-        print("Áudio gravado.")
 
 #Não há como enviar pedido de socorro se não houver alguém para recebê-la
     def PedirSocorro(self):
