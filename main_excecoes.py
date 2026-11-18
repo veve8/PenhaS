@@ -126,6 +126,17 @@ if _name_ == "_main_":
     except ValueError as erro:
         print("Erro:", erro)
 
+print("CLASSE BOTAODEPANICO")
+# SEÇÃO DE TESTE
+if __name__ == "_main_":
+    try:
+        botao = BotaoDePanico("17/11/2026", "18:00", "Porto Velho - RO", "Preciso de ajuda! Minha localização é Porto Velho.", True)
+
+        botao.EnviarSMSLocalizacao()
+      
+    except ValueError:
+        print("Não foi possível enviar o SMS.")
+
 print("CLASSE RELATOS")
 #Erro do relato vazio 
 try:
