@@ -1,4 +1,4 @@
-#Nome do programa: main_objetos.py
+#Nome do programa: main_excecoes.py
 #Curso: informática
 #Ano: 2° ano
 #Turma: 2° B
@@ -9,232 +9,248 @@
 
 from objetos_excecoes import *
 
-#Testando as classes com casos de erro
-print("CLASSE USUARIO")
+#Testando as classes com casos de exceção
+#Classe Usuario
 
 #Telefone com letras
 try:
-  usuario = Usuario("Fulana", "699999999ab", "12345678910")
-  #Atributos
-  print("Nome: ", usuario.nome)
-  print("Telefone: ", usuario.telefone)
-  print("CPF: ", usuario.cpf)
+    usuario = Usuario("Fulana", "699999999ab", "12345678910")
 except ValueError as erro:
-  print(erro)
+    print(erro)
 
 #Telefone com menos de 11 dígitos
 try:
-  usuario = Usuario("Fulana", "699999999", "12345678910")
-  #Atributos
-  print("Nome: ", usuario.nome)
-  print("Telefone: ", usuario.telefone)
-  print("CPF: ", usuario.cpf)
+    usuario = Usuario("Fulana", "699999999", "12345678910")
 except ValueError as erro:
-  print(erro)
+    print(erro)
 
 #Telefone com mais de 11 dígitos
 try:
-  usuario = Usuario("Fulana", "69999999999", "12345678910")
-  #Atributos
-  print("Nome: ", usuario.nome)
-  print("Telefone: ", usuario.telefone)
-  print("CPF: ", usuario.cpf)
+    usuario = Usuario("Fulana", "699999999999", "12345678910")
 except ValueError as erro:
-  print(erro)
+    print(erro)
 
 #CPF com letras
 try:
-  usuario = Usuario("Fulana", "69999999999", "123456789ab")
-  print("Nome: ", usuario.nome)
-  print("Telefone: ", usuario.telefone)
-  print("CPF: ", usuario.cpf)
+    usuario = Usuario("Fulana", "69999999999", "123456789ab")
 except ValueError as erro:
-  print(erro)
+    print(erro)
 
 #CPF com menos de 11 dígitos
 try:
-  usuario = Usuario("Fulana", "69999999999", "123456789")
-  print("Nome: ", usuario.nome)
-  print("Telefone: ", usuario.telefone)
-  print("CPF: ", usuario.cpf)
+    usuario = Usuario("Fulana", "69999999999", "123456789")
 except ValueError as erro:
-  print(erro)
+    print(erro)
 
 #CPF com mais de 11 dígitos
 try:
-  usuario = Usuario("Fulana", "69999999999", "123456789101")
-  print("Nome: ", usuario.nome)
-  print("Telefone: ", usuario.telefone)
-  print("CPF: ", usuario.cpf)
+    usuario = Usuario("Fulana", "69999999999", "123456789101")
 except ValueError as erro:
-  print(erro)
+    print(erro)
 
-#Criando objeto com dados válidos
-print("___________________________________________")
-print("OBJETO DA CLASSE USUÁRIO COM DADOS VÁLIDOS")
+
+#Classe PessoasDeConfianca
+
+#Nome vazio
+try:
+    contato = PessoasDeConfianca("", "69999999999")
+except ContatoInvalidoError as erro:
+    print("Exceção capturada:", erro)
+
+#Telefone vazio
+try:
+    contato = PessoasDeConfianca("Maria", "")
+except TelefoneInvalidoError as erro:
+    print("Exceção capturada:", erro)
+
+#Telefone com letras
+try:
+    contato = PessoasDeConfianca("Maria", "699999999ab")
+except TelefoneInvalidoError as erro:
+    print("Exceção capturada:", erro)
+
+#Telefone com menos de 11 dígitos
+try:
+    contato = PessoasDeConfianca("Maria", "699999999")
+except TelefoneInvalidoError as erro:
+    print("Exceção capturada:", erro)
+
+#Telefone com mais de 11 dígitos
+try:
+    contato = PessoasDeConfianca("Maria", "699999999999")
+except TelefoneInvalidoError as erro:
+    print("Exceção capturada:", erro)
+
+
+#Classe Relatos
+#Relato vazio
+try:
+    relato = Relatos("Ana", "", "15:56", "04/01/2026")
+except RelatoVazioError as erro:
+    print("Exceção capturada:", erro)
+
+
+#Classe RedeDeApoio
+#Relato vazio
+try:
+    rede = RedeDeApoio("Maria", "", "15/11/2026", "documento.pdf")
+
+    print("Nome de usuário:", rede.nomeDeUsuario)
+    print("Textos:", rede.textos)
+    print("Data:", rede.data)
+    print("Arquivo:", rede.arquivo)
+
+    rede.CompartilharRelatos("Maria", "", "19:37", "15/11/2026")
+
+except RelatoVazioError as erro:
+    print("Exceção capturada:", erro)
+
+
+#Classe Questionario
+#Pergunta vazia
+try:
+    perguntas = Questionario("", "Exemplo de resposta.")
+    print("Perguntas:", perguntas.perguntas)
+    print("Resposta:", perguntas.resposta)
+    perguntas.ValidarResposta()
+
+except ValueError as erro:
+    print("Exceção capturada:", erro)
+
+#Resposta vazia
+try:
+    resposta = Questionario("Exemplo de pergunta.", "")
+    print("Perguntas:", resposta.perguntas)
+    print("Resposta:", resposta.resposta)
+    resposta.ValidarResposta()
+
+except ValueError as erro:
+    print("Exceção capturada:", erro)
+
+
+#Classes com dados predefinidos
+#Classe Usuario
 usuario = Usuario("Fulana", "69999999999", "12345678910")
-print("Nome: ", usuario.nome)
-print("Telefone: ", usuario.telefone)
-print("CPF: ", usuario.cpf)
 
-#Método de cadastro ("inventar" a senha)
+print("Nome:", usuario.nome)
+print("Telefone:", usuario.telefone)
+print("CPF:", usuario.cpf)
+
 usuario.FazerCadastro("senha123")
 
-#Método de login
-print("Login correto: ")
+print("Login correto:")
 print(usuario.FazerLogin("senha123"))
 
-print("Login incorreto: ")
+print("Login incorreto:")
 print(usuario.FazerLogin("senha456"))
 
-print("___________________________________________")
 
-#Definindo objeto antes para poder utiliza-la para representar caso de dependência em Vitima
-questionario = Questionario("Exemplo de pergunta", "Exemplo de resposta")
+#Objeto Questionario
+#Criado primeiro para representar a dependência com Vitima
+questionario = Questionario("Exemplo de pergunta.", "Exemplo de resposta.")
 
-'''print("CLASSE VITIMA")
-#Senha vazia
-try:
-  senha = Vitima("")
-  senha.FazerLogin()
-  print("Senha: ", senha.senha_tentada)
-except SenhaInvalidaError as erro:
-  print(erro)
+#Classe Vitima
+vitima = Vitima("Ana", "69999999999", "12345678910", "senha123", "ana@email.com", "Porto Velho - RO")
 
-#Senha errada
-try:
-  senha = Vitima("senha124")
-  senha.FazerLogin()
-  print("Senha: ", senha.senha_tentada)
-except SenhaInvalidaError as erro:
-  print(erro)''' 
+print("Nome:", vitima.nome)
+print("Telefone:", vitima.telefone)
+print("CPF:", vitima.cpf)
+print("E-mail:", vitima.email)
+print("Localização:", vitima.localizacao)
 
-print("CLASSE PESSOASDECONFIANCA")
-if _name_ == "_main_":
-    try:
-        nome = input("Digite o nome: ")
-        telefone = input("Digite o telefone: ")
+#Testando FazerLogin
+vitima.FazerLogin("")
 
-        pessoa = PessoasDeConfianca(nome, telefone)
+vitima.FazerLogin("senhaerrada")
 
-        print("\nCadastro realizado com sucesso!")
-        print("Nome:", pessoa.nomeDeUsuario)
-        print("Telefone:", pessoa.numeroDeTelefone)
+vitima.FazerLogin("senha123")
 
-        pessoa.ReceberSMSlocalizacao()
+#Testando métodos
+vitima.VerLocalizacao()
+vitima.AcessarRedeDeApoio()
+vitima.CompartilharLocalizacao()
 
-    except ValueError as erro:
-        print("Erro:", erro)
+#Testando dependência com Questionario
+vitima.ResponderQuestionario(questionario)
 
-print("CLASSE BOTAODEPANICO")
-# SEÇÃO DE TESTE
-if __name__ == "_main_":
-    try:
-        botao = BotaoDePanico("17/11/2026", "18:00", "Porto Velho - RO", "Preciso de ajuda! Minha localização é Porto Velho.", True)
+#Testando composição com PessoasDeConfiança
+vitima.CadastrarContatos("Maria", "69999999999")
 
-        botao.EnviarSMSLocalizacao()
-      
-    except ValueError:
-        print("Não foi possível enviar o SMS.")
+#Testando PedirSocorro
+vitima.PedirSocorro()
 
-print("CLASSE RELATOS")
-#Erro do relato vazio 
-try:
-    relato = Relatos("Ana", "", "15:56", "04/01/2026")
-    print("Nome de usuário: ", relato.nomeDeUsuario)
-    print("Relato: ", relato.textos)
-    print("Horário: ", relato.hora)
-    print("Data: ", relato.data)
-except RelatoVazioError as erro:
-    print(erro)
-#Criando objeto com dados válidos
-print("___________________________________________")
+print("Quantidade de contatos:", len(vitima.pessoasDeConfianca))
+
+
+#Classe PessoasDeConfianca 
+contato = PessoasDeConfianca("Maria", "69999999999")
+
+print("Nome:", contato.nomeDeUsuario)
+print("Telefone:", contato.numeroDeTelefone)
+
+contato.receberSMSlocalizacao()
+
+#Classe BotaoDePanico
+print("CLASSE BOTAO DE PANICO")
+
+botao = BotaoDePanico("17/11/2026", "18:00", "Porto Velho - RO", "Preciso de ajuda! Minha localização é Porto Velho.", contato)
+
+print("Data:", botao.data)
+print("Hora:", botao.hora)
+print("Localização:", botao.localizacao)
+print("SMS:", botao.sms)
+
+botao.EnviarSMSLocalizacao()
+
+
+#Classe Relatos 
 relato = Relatos("Ana", "Exemplo de texto.", "16:12", "04/01/2026")
-print("Nome de usuário: ", relato.nomeDeUsuario)
-print("Relato: ", relato.textos)
-print("Horário: ", relato.hora)
-print("Data: ", relato.data)
+
+print("Nome de usuário:", relato.nomeDeUsuario)
+print("Relato:", relato.textos)
+print("Horário:", relato.hora)
+print("Data:", relato.data)
 
 relato.RegistrarRelato()
 relato.ReceberComentarios()
 
-print("___________________________________________")
 
-print("CLASSE REDEDEAPOIO")
-#Relato vazio
-try:
-    rede = RedeDeApoio("Maria", "", "15/11/2026", "documento.pdf")
-    print("Nome de usuário: ", rede.nomeDeUsuario)
-    print("Textos: ", rede.textos)
-    print("Data: ", rede.data)
-    print("Arquivo: ", rede.arquivo)
-    rede.CompartilharRelatos("Maria", "", "19:37", "15/11/2026")
-except RelatoVazioError as erro:
-    print(erro)
-  
-#Criando objetos com dados válidos
-print("___________________________________________")
-print("OBJETO DA CLASSE REDEDEAPOIO COM DADOS VÁLIDOS")
+#Classe RedeDeApoio
 rede = RedeDeApoio("Maria", "Exemplo de texto.", "15/11/2026", "documento.pdf")
-print("Nome de usuário: ", rede.nomeDeUsuario)
-print("Textos: ", rede.textos)
-print("Data: ", rede.data)
-print("Arquivo: ", rede.arquivo)
-rede.CompartilharRelatos("Maria", "Exemplo de texto.", "19:37", "15/11/2026")
-#Testando os métodos
+
+print("Nome de usuário:", rede.nomeDeUsuario)
+print("Textos:", rede.textos)
+print("Data:", rede.data)
+print("Arquivo:", rede.arquivo)
+
 rede.AcessarServicosProtecao()
 
-rede.CompartilharRelatos("Maria","Exemplo de texto.","19:31","15/11/2026")
+rede.CompartilharRelatos("Maria", "Exemplo de texto.", "19:37", "15/11/2026")
 
-#Testando a relação de composição entre a rede de apoio e relatos
-print("Quantidade de relatos compartilhados: ", len(rede.relatos))
-print("Texto do relato: ", rede.relatos[0].textos)
+#Testando composição entre RedeDeApoio e Relatos
+print("Quantidade de relatos compartilhados:", len(rede.relatos))
+print("Texto do relato:", rede.relatos[0].textos)
 
-print("CLASSE QUESTIONARIO")
-#Pergunta vazia
-try:
-  perguntas_resposta = Questionario("", "Exemplo de resposta.")
-  perguntas_resposta.ValidarResposta()
-  print("Perguntas: ", questionario.perguntas)
-  print("Resposta: ", questionario.resposta)
-except ValueError as erro:
-  print(erro)
-
-#Resposta vazia
-try:
-  perguntas_resposta = Questionario("Exemplo de pergunta.", "")
-  perguntas_resposta.ValidarResposta()
-  print("Perguntas: ", questionario.perguntas)
-  print("Resposta: ", questionario.resposta)
-except ValueError as erro:
-  print(erro)
-
-#Criando objetos com dados válidos
-print("___________________________________________")
-print("OBJETO DA CLASSE QUESTIONARIO COM DADOS VÁLIDOS")
-perguntas_resposta = Questionario("Exemplo de pergunta.", "Exemplo de resposta.")
-print("Perguntas: ", questionario.perguntas)
-print("Resposta: ", questionario.resposta)
+#Classe Questionario 
+print("Perguntas:", questionario.perguntas)
+print("Resposta:", questionario.resposta)
 
 questionario.Retornarmanual()
 questionario.RetornarAvaliacao()
-print("___________________________________________")
+questionario.ValidarResposta()
 
-#A classe AudioProva não recebeu tratamento de exceção pois não foi necessário
-print("CLASSE AUDIOPROVA")
-#Criando o objeto audio
+#Classe AudioProva
 audio = AudioProva("04/01/2026", "18:18", "00:45", "audio.mp3")
 
-print("Data: ", audio.data)
-print("Horário: ", audio.hora)
-print("Duração: ", audio.duracao)
-print("Arquivo: ", audio.arquivo)
+print("Data:", audio.data)
+print("Horário:", audio.hora)
+print("Duração:", audio.duracao)
+print("Arquivo:", audio.arquivo)
 
 audio.GuardarAudio()
 audio.ArmazenarAudioNuvem()
 
-#Testando dependência (vítima e AudioProva)
+#Testando dependência entre Vitima e AudioProva
 vitima.GravarAudio(audio)
 
-print("Quantidade de áudios gravados: ", len(vitima.audios))
-print("___________________________________________")
+print("Quantidade de áudios gravados:", len(vitima.audios))
